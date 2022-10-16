@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third party
-    "storages",
 
     # custom apps
     "accounts",
@@ -134,19 +133,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # User Model
 AUTH_USER_MODEL = "accounts.User"
-
-# Storages
-DEFAULT_FILE_STORAGE = 'core.storages.PublicMediaStorage'
-
-AWS_STORAGE_BUCKET_NAME = env("S3_BUCKET_NAME")
-
-AWS_S3_URL_PROTOCOL = env("S3_URL_PROTOCOL")
-AWS_S3_ACCESS_KEY_ID = env("S3_ACCESS_KEY_ID")
-AWS_S3_SECRET_ACCESS_KEY = env("S3_SECRET_KEY")
-AWS_S3_ENDPOINT_URL = env("S3_ENDPOINT_URL")
-
-PUBLIC_MEDIA_LOCATION = 'media'
-MEDIA_ROOT = PUBLIC_MEDIA_LOCATION
-MEDIA_URL = f'/{PUBLIC_MEDIA_LOCATION}/'
-
-S3_EXTERNAL_DOMAIN = env("S3_EXTERNAL_DOMAIN")

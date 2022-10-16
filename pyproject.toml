@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "django-markdown-overview-demo"
+name = "django-sms-massage-example"
 version = "0.1.0"
 description = ""
 authors = ["Sqvall <masster1987@inbox.ru>"]
@@ -8,10 +8,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.10.2"
+Django = "^4.1.2"
 django-environ = "^0.9.0"
-django-storages = "^1.13.1"
 psycopg2-binary = "^2.9.3"
-boto3 = "^1.24.70"
 
 
 [build-system]
