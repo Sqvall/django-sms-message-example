@@ -39,7 +39,7 @@ env-cp: ## create env file from .env.example
 	cp .env.example .env
 
 initialize: env-cp build up makemigrations migrate createsuperuser
-	printf "user: admin\npassword: admin\nhref: http://localhost:8080/admin\n"
+	printf "Example href: http://localhost:8080/\n"
 
 logs:  ## show logs for app container
 	${DC} logs -f app

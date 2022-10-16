@@ -61,8 +61,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,3 +132,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # User Model
 AUTH_USER_MODEL = "accounts.User"
+
+# SMS
+SMS_SETTINGS = {
+    "BACKEND": "notifications.sms.backends.smsc.SmsBackend",
+    "OPTIONS": {
+        "SMSC_LOGIN": "your_login",  # Login from https://smsc.ru
+        "SMSC_PASSWORD": "your_password",  # Password
+        "SMSC_DEBUG": False,  # Debug flag
+        "SMSC_SENDER": False,  # Sender for message https://smsc.ru/senders/
+    }
+}

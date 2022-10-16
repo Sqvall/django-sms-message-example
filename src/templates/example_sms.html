@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .input-row {
+            margin: 1rem 0;
+            width: 23rem;
+            display: flex;
+            justify-content: space-between
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form action="/" method="post">{% csrf_token %}
+        <div class="input-row">
+            <label for="phone">Phone number: </label>
+            <input id="phone" type="tel" name="phone">
+        </div>
+        <div class="input-row">
+            <label for="message_text">Message text: </label>
+            <input id="message_text" type="text" name="message_text">
+        </div>
+        <input type="submit" value="Send">
+    </form>
+</div>
+{% if message_text and phone %}
+    <div>
+        <div>Message successfully sent.</div>
+        <div>Phone: {{ phone }}</div>
+        <div>Message text: {{ message_text }}</div>
+        <div>SMS backend: {{ backend }}</div>
+    </div>
+{% endif %}
+</body>
+</html>
